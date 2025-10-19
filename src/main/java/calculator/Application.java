@@ -54,7 +54,7 @@ public class Application {
 
         }
         System.out.println(sum);
-            //완료
+        //완료
 
     }
 }
