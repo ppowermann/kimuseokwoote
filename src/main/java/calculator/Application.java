@@ -16,7 +16,7 @@ public class Application {
 
 
         //빈문자열입력시 sum=0 그대로 반환
-        if(str == ""){
+        if(str.isEmpty()){
             System.out.println(sum);
             return;
         }
