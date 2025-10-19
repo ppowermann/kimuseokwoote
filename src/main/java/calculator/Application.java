@@ -37,6 +37,7 @@ public class Application {
             //if조건 elseif조건 이외에 나머지 경우는
             //문자열 덧셈계산기에서 오류이므로
             //오류발생시킨다
+            //음수도 이 조건으로 전부 걸러짐
         }
 
         String[] results = str.split("[" + separator + "]");
