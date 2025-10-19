@@ -9,11 +9,18 @@ public class Application {
 
 
         String separator = ",|:|";//기본 구분자 모음
+        int sum = 0;
 
         System.out.print("입력할 문자열:");
         String str = Console.readLine();
 
-        int sum = 0;
+
+        //빈문자열입력시 sum=0 그대로 반환
+        if(str == ""){
+            System.out.println(sum);
+            return;
+        }
+
 
 
         // "//\n은 입력값의 반드시 0번째1번째3번째4번째 에 올테니까
