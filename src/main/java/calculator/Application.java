@@ -1,12 +1,13 @@
 package calculator;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        String test = ",|:|";//기본 구분자 모음
+        String separator = ",|:|";//기본 구분자 모음
 
         System.out.print("입력할 문자열:");
         String str = sc.nextLine();
@@ -19,7 +20,7 @@ public class Application {
                 str.charAt(1) == '/' &&
                 str.charAt(3) == '\\' &&
                 str.charAt(4) == 'n') {
-            test += str.charAt(2); //그래서 str 2번째 char를 추출해서 구분자에 추가함
+            separator += str.charAt(2); //그래서 str 2번째 char를 추출해서 구분자에 추가함
             str = str.substring(5);
             // 서브스트링이 없으면 //\n도 배열로 추가되니
             // 계산할 숫자가 시작되는 str의 5번째부터 배열에 추가함
@@ -38,7 +39,11 @@ public class Application {
             //오류발생시킨다
         }
 
-        String[] results = str.split("[" + test + "]");
+        String[] results = str.split("[" + separator + "]");
+        //separator의 안의 기본구분자 또는 커스텀 구분자가 추가됫다면
+        //구분자를 기준으로 문자열안에 숫자들을 구벌해서
+        //results배열안에 넣는다
+
 
         for (String result : results) {
             //로직으로 완료된 String results를 하나씩 꺼내서
