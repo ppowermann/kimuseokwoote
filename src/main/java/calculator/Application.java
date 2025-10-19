@@ -17,7 +17,7 @@ public class Application {
 
         //빈문자열입력시 sum=0 그대로 반환
         if(str.isEmpty()){
-            System.out.println(sum);
+            System.out.println("결과 : "+sum);
             return;
         }
 
@@ -39,14 +39,16 @@ public class Application {
             //숫자이므로 두번째 조건문에서 str의 0번째가 숫자인지 확인함
             //숫자가 맞으면 커스텀구분자가 없으므로 계산시작
         } else if ((Character.isDigit(str.charAt(0)))) {
-            System.out.println("커스텀할 구분자가 없습니다");
-        } else {
+            System.out.println("커스텀구분자없는 문자열더하기");
+
+            //else는 너무 광범위해서 아닐때 오류던지기
+        } else if(!(Character.isDigit(str.charAt(0)))){
             throw new IllegalArgumentException("잘못된 값을 입력하였습니다");
 
             //if조건 elseif조건 이외에 나머지 경우는
             //문자열 덧셈계산기에서 오류이므로
             //오류발생시킨다
-            //음수도 이 조건으로 전부 걸러짐
+
         }
 
         String[] results = str.split("[" + separator + "]");
@@ -56,14 +58,22 @@ public class Application {
 
 
         for (String result : results) {
-            //로직으로 완료된 String results를 하나씩 꺼내서
-            //str>>>int로 바꿔서 num변수안에 넣고
-            //반복하여 최종값 sum에 축척한다
-            int num = Integer.parseInt(result);
-            sum += num;
 
+
+
+                //로직으로 완료된 String results를 하나씩 꺼내서
+                //str>>>int로 바꿔서 num변수안에 넣고
+                //반복하여 최종값 sum에 축척한다
+                int num = Integer.parseInt(result);
+
+
+                if(num < 0) {
+
+                    throw new IllegalArgumentException("음수를 입력 하였습니다");
+                }
+            sum += num;
         }
-        System.out.println(sum);
+        System.out.println("결과 : "+sum);
         //완료
 
     }
