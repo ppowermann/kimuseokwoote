@@ -1,16 +1,18 @@
 package calculator;
 
 import javax.swing.*;
-import java.util.Scanner;
+import camp.nextstep.edu.missionutils.Console;
+
 
 public class Application {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+
         String separator = ",|:|";//기본 구분자 모음
 
         System.out.print("입력할 문자열:");
-        String str = sc.nextLine();
+        String str = Console.readLine();
+
         int sum = 0;
 
 
