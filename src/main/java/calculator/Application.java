@@ -25,7 +25,8 @@ public class Application {
 
         // "//\n은 입력값의 반드시 0번째1번째3번째4번째 에 올테니까
         // 이 조건이 항상나오므로 커스텀 문자는 항상 2번째에 나옴
-        if (str.charAt(0) == '/' &&
+        if (    str.length() >= 5 &&
+                str.charAt(0) == '/' &&
                 str.charAt(1) == '/' &&
                 str.charAt(3) == '\\' &&
                 str.charAt(4) == 'n') {
